@@ -11,6 +11,7 @@ import Alamofire
 
 protocol FelixHTTPDelegate: class {
     func get(url: String, completion: @escaping (String?) -> Void)
+    func post(url: String, message: String, completion: @escaping ([String: Any]) -> Void)
 }
 
 class HTTPDelegate: NSObject, FelixHTTPDelegate {
@@ -21,4 +22,17 @@ class HTTPDelegate: NSObject, FelixHTTPDelegate {
         }
     }
     
+    func post(url: String, message: String, completion: @escaping ([String : Any]) -> Void) {
+        Alamofire.request(url, method: .post, parameters: ["user_message" : message], encoding: JSONEncoding(), headers: nil).responseJSON { (response) in
+            guard response.result.isSuccess else {
+                return
+            }
+            
+            guard let data = response.result.value as? [String: Any] else {
+                return
+            }
+            
+            completion(data)
+        }
+    }
 }
