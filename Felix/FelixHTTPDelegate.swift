@@ -25,9 +25,10 @@ class HTTPDelegate: NSObject, FelixHTTPDelegate {
     func post(url: String, message: String, completion: @escaping ([String : Any]) -> Void) {
         Alamofire.request(url, method: .post, parameters: ["user_message" : message], encoding: JSONEncoding(), headers: nil).responseJSON { (response) in
             guard response.result.isSuccess else {
+                print(response.error)
                 return
             }
-            
+
             guard let data = response.result.value as? [String: Any] else {
                 return
             }

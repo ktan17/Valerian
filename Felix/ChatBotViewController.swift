@@ -42,8 +42,8 @@ class ChatBotViewController: JSQMessagesViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        m_httpDelegate.get(url: "http://localhost:3000") { (result) in
-            print("received \(result)")
+        m_httpDelegate.post(url: "http://localhost:3000", message: "christine is kool") { (response) in
+            print(response)
         }
     }
 
