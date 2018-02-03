@@ -14,6 +14,9 @@
 		4455892F20263E0100902519 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4455892D20263E0100902519 /* LaunchScreen.storyboard */; };
 		4455893A20263E0100902519 /* FelixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455893920263E0100902519 /* FelixTests.swift */; };
 		4455894520263E0100902519 /* FelixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455894420263E0100902519 /* FelixUITests.swift */; };
+		A8A40D1D839A398923920E56 /* Pods_Felix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD483ADCB87E797D60A3C945 /* Pods_Felix.framework */; };
+		AA2A5A216EB9E24C56C93602 /* Pods_FelixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E228D3126476EFF448AF05C2 /* Pods_FelixUITests.framework */; };
+		DCC815EFCBFA446802B2BCF3 /* Pods_FelixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57DF5AB99629F3179431AE12 /* Pods_FelixTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		142E08182BCC8128815D39DD /* Pods-FelixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FelixTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FelixTests/Pods-FelixTests.debug.xcconfig"; sourceTree = "<group>"; };
+		41D627990BEFF4E5BB477FF2 /* Pods-Felix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Felix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Felix/Pods-Felix.debug.xcconfig"; sourceTree = "<group>"; };
 		4455892120263E0000902519 /* Felix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Felix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4455892420263E0000902519 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4455892620263E0000902519 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,13 @@
 		4455894020263E0100902519 /* FelixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FelixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4455894420263E0100902519 /* FelixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FelixUITests.swift; sourceTree = "<group>"; };
 		4455894620263E0100902519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57DF5AB99629F3179431AE12 /* Pods_FelixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FelixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FCF2EF437A41A5894FCD930 /* Pods-FelixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FelixUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FelixUITests/Pods-FelixUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A11CE9F420B26C48FEAEF0E6 /* Pods-FelixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FelixTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FelixTests/Pods-FelixTests.release.xcconfig"; sourceTree = "<group>"; };
+		BD483ADCB87E797D60A3C945 /* Pods_Felix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Felix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E228D3126476EFF448AF05C2 /* Pods_FelixUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FelixUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF99B530ACAD16F3652BAC66 /* Pods-FelixUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FelixUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FelixUITests/Pods-FelixUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F3B03BF80EF0C13F2E3C2029 /* Pods-Felix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Felix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Felix/Pods-Felix.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A40D1D839A398923920E56 /* Pods_Felix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC815EFCBFA446802B2BCF3 /* Pods_FelixTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2A5A216EB9E24C56C93602 /* Pods_FelixUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +96,8 @@
 				4455893820263E0100902519 /* FelixTests */,
 				4455894320263E0100902519 /* FelixUITests */,
 				4455892220263E0000902519 /* Products */,
+				A04A9624A96EC267537F23AB /* Pods */,
+				C2EEE467A79606B5D11DD5A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +142,29 @@
 			path = FelixUITests;
 			sourceTree = "<group>";
 		};
+		A04A9624A96EC267537F23AB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41D627990BEFF4E5BB477FF2 /* Pods-Felix.debug.xcconfig */,
+				F3B03BF80EF0C13F2E3C2029 /* Pods-Felix.release.xcconfig */,
+				142E08182BCC8128815D39DD /* Pods-FelixTests.debug.xcconfig */,
+				A11CE9F420B26C48FEAEF0E6 /* Pods-FelixTests.release.xcconfig */,
+				7FCF2EF437A41A5894FCD930 /* Pods-FelixUITests.debug.xcconfig */,
+				EF99B530ACAD16F3652BAC66 /* Pods-FelixUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C2EEE467A79606B5D11DD5A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD483ADCB87E797D60A3C945 /* Pods_Felix.framework */,
+				57DF5AB99629F3179431AE12 /* Pods_FelixTests.framework */,
+				E228D3126476EFF448AF05C2 /* Pods_FelixUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4455894920263E0100902519 /* Build configuration list for PBXNativeTarget "Felix" */;
 			buildPhases = (
+				4B75F7BB7826226B5961688F /* [CP] Check Pods Manifest.lock */,
 				4455891D20263E0000902519 /* Sources */,
 				4455891E20263E0000902519 /* Frameworks */,
 				4455891F20263E0000902519 /* Resources */,
+				5D9FD02C5EF78D83FDCAD345 /* [CP] Embed Pods Frameworks */,
+				36FEDF5FAFE1CDB5A3A1BB6B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4455894C20263E0100902519 /* Build configuration list for PBXNativeTarget "FelixTests" */;
 			buildPhases = (
+				9502F84EAD0F607532E04188 /* [CP] Check Pods Manifest.lock */,
 				4455893120263E0100902519 /* Sources */,
 				4455893220263E0100902519 /* Frameworks */,
 				4455893320263E0100902519 /* Resources */,
+				3A80C096CC8E0A34B294DFA0 /* [CP] Embed Pods Frameworks */,
+				7B101C4A54021769C39B8B43 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4455894F20263E0100902519 /* Build configuration list for PBXNativeTarget "FelixUITests" */;
 			buildPhases = (
+				66B7FE0B877F8BA0D6AA5467 /* [CP] Check Pods Manifest.lock */,
 				4455893C20263E0100902519 /* Sources */,
 				4455893D20263E0100902519 /* Frameworks */,
 				4455893E20263E0100902519 /* Resources */,
+				BED36FF4036D3A33DA8E7D6A /* [CP] Embed Pods Frameworks */,
+				DE43079C565274074153D05E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +302,158 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36FEDF5FAFE1CDB5A3A1BB6B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Felix/Pods-Felix-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A80C096CC8E0A34B294DFA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FelixTests/Pods-FelixTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B75F7BB7826226B5961688F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Felix-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D9FD02C5EF78D83FDCAD345 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Felix/Pods-Felix-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Felix/Pods-Felix-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66B7FE0B877F8BA0D6AA5467 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FelixUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B101C4A54021769C39B8B43 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FelixTests/Pods-FelixTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9502F84EAD0F607532E04188 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FelixTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BED36FF4036D3A33DA8E7D6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FelixUITests/Pods-FelixUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE43079C565274074153D05E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FelixUITests/Pods-FelixUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4455891D20263E0000902519 /* Sources */ = {
@@ -424,6 +625,7 @@
 		};
 		4455894A20263E0100902519 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41D627990BEFF4E5BB477FF2 /* Pods-Felix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -439,6 +641,7 @@
 		};
 		4455894B20263E0100902519 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3B03BF80EF0C13F2E3C2029 /* Pods-Felix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +657,7 @@
 		};
 		4455894D20263E0100902519 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 142E08182BCC8128815D39DD /* Pods-FelixTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +675,7 @@
 		};
 		4455894E20263E0100902519 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A11CE9F420B26C48FEAEF0E6 /* Pods-FelixTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +693,7 @@
 		};
 		4455895020263E0100902519 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FCF2EF437A41A5894FCD930 /* Pods-FelixUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -504,6 +710,7 @@
 		};
 		4455895120263E0100902519 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF99B530ACAD16F3652BAC66 /* Pods-FelixUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
