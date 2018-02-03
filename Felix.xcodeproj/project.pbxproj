@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		4455892520263E0000902519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455892420263E0000902519 /* AppDelegate.swift */; };
-		4455892720263E0000902519 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455892620263E0000902519 /* ViewController.swift */; };
+		4455892720263E0000902519 /* ChatBotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455892620263E0000902519 /* ChatBotViewController.swift */; };
 		4455892A20263E0100902519 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4455892820263E0100902519 /* Main.storyboard */; };
 		4455892C20263E0100902519 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4455892B20263E0100902519 /* Assets.xcassets */; };
 		4455892F20263E0100902519 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4455892D20263E0100902519 /* LaunchScreen.storyboard */; };
 		4455893A20263E0100902519 /* FelixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455893920263E0100902519 /* FelixTests.swift */; };
 		4455894520263E0100902519 /* FelixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455894420263E0100902519 /* FelixUITests.swift */; };
+		445589532026650900902519 /* FelixHTTPDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445589522026650900902519 /* FelixHTTPDelegate.swift */; };
 		A8A40D1D839A398923920E56 /* Pods_Felix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD483ADCB87E797D60A3C945 /* Pods_Felix.framework */; };
 		AA2A5A216EB9E24C56C93602 /* Pods_FelixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E228D3126476EFF448AF05C2 /* Pods_FelixUITests.framework */; };
 		DCC815EFCBFA446802B2BCF3 /* Pods_FelixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57DF5AB99629F3179431AE12 /* Pods_FelixTests.framework */; };
@@ -41,7 +42,7 @@
 		41D627990BEFF4E5BB477FF2 /* Pods-Felix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Felix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Felix/Pods-Felix.debug.xcconfig"; sourceTree = "<group>"; };
 		4455892120263E0000902519 /* Felix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Felix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4455892420263E0000902519 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4455892620263E0000902519 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4455892620263E0000902519 /* ChatBotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotViewController.swift; sourceTree = "<group>"; };
 		4455892920263E0100902519 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4455892B20263E0100902519 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4455892E20263E0100902519 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		4455894020263E0100902519 /* FelixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FelixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4455894420263E0100902519 /* FelixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FelixUITests.swift; sourceTree = "<group>"; };
 		4455894620263E0100902519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		445589522026650900902519 /* FelixHTTPDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FelixHTTPDelegate.swift; sourceTree = "<group>"; };
 		57DF5AB99629F3179431AE12 /* Pods_FelixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FelixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FCF2EF437A41A5894FCD930 /* Pods-FelixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FelixUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FelixUITests/Pods-FelixUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A11CE9F420B26C48FEAEF0E6 /* Pods-FelixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FelixTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FelixTests/Pods-FelixTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,7 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				4455892420263E0000902519 /* AppDelegate.swift */,
-				4455892620263E0000902519 /* ViewController.swift */,
+				4455892620263E0000902519 /* ChatBotViewController.swift */,
+				445589522026650900902519 /* FelixHTTPDelegate.swift */,
 				4455892820263E0100902519 /* Main.storyboard */,
 				4455892B20263E0100902519 /* Assets.xcassets */,
 				4455892D20263E0100902519 /* LaunchScreen.storyboard */,
@@ -349,7 +352,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5D9FD02C5EF78D83FDCAD345 /* [CP] Embed Pods Frameworks */ = {
@@ -387,7 +390,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7B101C4A54021769C39B8B43 /* [CP] Copy Pods Resources */ = {
@@ -420,7 +423,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BED36FF4036D3A33DA8E7D6A /* [CP] Embed Pods Frameworks */ = {
@@ -460,8 +463,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4455892720263E0000902519 /* ViewController.swift in Sources */,
+				4455892720263E0000902519 /* ChatBotViewController.swift in Sources */,
 				4455892520263E0000902519 /* AppDelegate.swift in Sources */,
+				445589532026650900902519 /* FelixHTTPDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

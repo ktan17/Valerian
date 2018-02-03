@@ -8,7 +8,8 @@ target 'Felix' do
   # Pods for Felix
   
   pod 'JSQMessagesViewController'
-
+  pod 'Alamofire', '~> 4.5'
+  
   target 'FelixTests' do
     inherit! :search_paths
     # Pods for testing

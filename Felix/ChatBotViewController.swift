@@ -18,23 +18,33 @@ class ChatBotViewController: JSQMessagesViewController {
     private lazy var m_outgoingBubble = setupOutgoingBubble()
     private lazy var m_incomingBubble = setupIncomingBubble()
     
+    private var m_httpDelegate: FelixHTTPDelegate!
+    
     // Methods
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.senderDisplayName = "Helen"
         self.senderId = "blah"
+        
+        m_httpDelegate = HTTPDelegate()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.senderDisplayName = "Helen"
         self.senderId = "blah"
+        
+        m_httpDelegate = HTTPDelegate()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        m_httpDelegate.get(url: "http://localhost:3000") { (result) in
+            print("received \(result)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
