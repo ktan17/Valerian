@@ -10,9 +10,12 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
     var object = req.body;
     var message = object.user_message;
-    res.send({
-	"success": true,
-	"received_message": message
+
+    var spawn = require('child_process').spawn;
+    var process = spawn('python', ["./script.py", message]);
+
+    process.stdout.on('data', (data) => {
+	res.send(data);
     });
 })
 
