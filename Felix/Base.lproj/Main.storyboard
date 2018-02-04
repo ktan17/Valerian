@@ -36,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tap to continue..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPj-1z-8VX">
-                                <rect key="frame" x="122.5" y="612" width="129" height="20"/>
+                                <rect key="frame" x="117.5" y="608" width="139" height="24"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm here to help :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubu-1d-auj">
-                                <rect key="frame" x="59" y="476" width="257" height="38.5"/>
+                                <rect key="frame" x="43" y="476" width="289" height="37"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -97,7 +97,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your name?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzt-It-7GM">
-                                <rect key="frame" x="12.5" y="314" width="350" height="41"/>
+                                <rect key="frame" x="12.5" y="314.5" width="350" height="39.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="cqO-Wf-rAq"/>
                                 </constraints>
@@ -112,27 +112,27 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BXt-Ad-ejq">
-                                <rect key="frame" x="12.5" y="405" width="350" height="41"/>
+                                <rect key="frame" x="12.5" y="404" width="350" height="40"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="35"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOi-A8-nRA">
-                                <rect key="frame" x="12.5" y="446" width="350" height="2"/>
+                                <rect key="frame" x="12.5" y="444" width="350" height="2"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="UYU-dJ-Gau"/>
                                 </constraints>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="he8-O5-CRZ">
-                                <rect key="frame" x="145" y="533" width="85" height="53"/>
+                                <rect key="frame" x="145" y="531" width="85" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="85" id="94X-gw-pP7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="35"/>
                                 <state key="normal" title="next"/>
                                 <connections>
-                                    <segue destination="ldx-VW-eYv" kind="presentation" id="L2A-k1-9td"/>
+                                    <segue destination="ldx-VW-eYv" kind="presentation" modalTransitionStyle="crossDissolve" id="L2A-k1-9td"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -203,10 +203,10 @@
                                 <items>
                                     <navigationItem title="Felix" id="BGV-BU-FnB">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="MQA-sf-WaN">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1PP-fA-4tZ">
-                                                <rect key="frame" x="313" y="7" width="46" height="30"/>
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1PP-fA-4tZ">
+                                                <rect key="frame" x="335" y="10" width="24" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" image="gearicon"/>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -262,6 +262,7 @@
         <image name="FelixGetName" width="205" height="290"/>
         <image name="FelixWelcome" width="210" height="210"/>
         <image name="WelcomeBG" width="1280" height="1280"/>
+        <image name="gearicon" width="24" height="24"/>
         <image name="messageicon" width="24" height="24"/>
     </resources>
 </document>
