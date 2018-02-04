@@ -19,6 +19,7 @@ app.post('/', (req, res) => {
     });
 })
 
-app.listen(3000, () => {
+var port = process.env.PORT || 8080;
+app.listen(port, () => {
     console.log("Listening on port 3000!");
 })
