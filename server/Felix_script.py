@@ -10,7 +10,7 @@ cbt_prompts = [	"(Free Prompt / Warm-up) What's on your mind?",
 				"(Challenge your automatic thought) What facts do you have that support or challenge your initial thought?",
 				"(Exercise alternative thinking) How could you re-write your thoughts into a different perspective?"]
 
-jsonData = json.dumps({"introduction": introduction, "what_is_CBT": what_is_CBT}, separators=(',',':'))
+jsonData = json.dumps({"0": introduction, "1": what_is_CBT}, separators=(',',':'))
 print(jsonData)
 sys.stdout.flush()
 
