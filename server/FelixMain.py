@@ -6,6 +6,14 @@ from watson_developer_cloud.tone_analyzer_v3 import*
 import boto3
 import os, six, sys, json
 import datetime, time, calendar
+<<<<<<< HEAD
+=======
+import firebase_admin
+from firebase_admin import credentials
+
+cred = credentials.Certificate("/Users/alanyuen/Desktop/felix-e20e1-firebase-adminsdk-ixr6p-28612afd74.json")
+firebase_admin.initialize_app(cred)
+>>>>>>> e5087c5592b0b90a15711f8caef2aaaf7eb8d900
 
 with open("/Users/alanyuen/Desktop/Felix/NOTHING_TO_SEE_HERE.txt", "r") as f:
 	lines = f.readlines()
@@ -191,6 +199,10 @@ def insert_data(sentences, keyphrases, tones, text):
 										} for j in range(len(tone["sentences_tone"][i]["tones"]))]
 		i+=1
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e5087c5592b0b90a15711f8caef2aaaf7eb8d900
 	"""
 	MetaData
 	{
@@ -236,8 +248,13 @@ tones = {"Tones": {}}
 # bad_text2 = "I failed my test. I can't believe I am so careless. I should have studied more, but I didn't because I'm lazy. I won't get into the college I really want to get into."
 # good_text2 = "The next time I make a mistake, I won't dwell on the negatives. I will remind myself of my past successes. I will remember to be kind to myself and to others."
 
+<<<<<<< HEAD
 text = "Insert Text Here"
 insert_data(sentences, keyphrases, tones, text)
+=======
+# text = "Insert Text Here"
+# insert_data(sentences, keyphrases, tones, text)
+>>>>>>> e5087c5592b0b90a15711f8caef2aaaf7eb8d900
 
 """
 	DailyJoy %: 0.2327391110194038
@@ -313,7 +330,10 @@ weekly_history = {[
 					} for i in range(7)
 				]}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e5087c5592b0b90a15711f8caef2aaaf7eb8d900
 def calc_daily_sentiment(sentences, metadata):
 	total_sentiment = 0
 	num_sentences_today = 0
@@ -347,11 +367,20 @@ def calc_daily_tones(sentences, metadata):
 
 				metadata[metadata_title][0] += t["score"]
 				metadata[metadata_title][1] += 1
+<<<<<<< HEAD
 #2012-12-15 01:21:05
 """
 def calc_weekly_tones(sentences, metadata):
 
 	
+=======
+
+#2012-12-15 01:21:05
+
+"""
+def calc_weekly_tones(sentences, metadata):
+
+>>>>>>> e5087c5592b0b90a15711f8caef2aaaf7eb8d900
 	todays_date = ""
 	current_year = int(todays_date[:4])
 	current_month = int(todays_date[5:7])
@@ -383,6 +412,12 @@ def calc_weekly_tones(sentences, metadata):
 				metadata[metadata_title][0] += t["score"]
 				metadata[metadata_title][1] += 1
 """
+<<<<<<< HEAD
+=======
+
+#  0		   1         2         3          4             5              6
+#"Joy", "Sadness", "Anger", "Anxiety", "Tentative", "Confidence", "Analytical"
+>>>>>>> e5087c5592b0b90a15711f8caef2aaaf7eb8d900
 # ["DailyJoy","DailySadness","DailyAnger","DailyAnxiety","DailyTentative","DailyConfidence","DailyAnalytical"]
 def normalize_main_emo(metadata):
 	emos = ["DailyJoy","DailySadness","DailyAnger","DailyAnxiety","DailyTentative","DailyConfidence","DailyAnalytical"]
@@ -394,9 +429,68 @@ def normalize_main_emo(metadata):
 
 normalize_main_emo(metadata)
 
+<<<<<<< HEAD
 
 #*--------------------------------------------------------------------------------------------*#
 
+=======
+introduction = "Hi. My name is Felix! I am here to help you exercise healthy ways of thinking, through a process called cognitive behavioural therapy (CBT)."
+# This method is proven to be one of the best options to improve daily mood and overall health. I am also attentative of the meaning of your words in order to help you identify thought patterns and keep track of your mood day-to-day. 
+# You can think of me as a tool to help you tackle the difficult task of identifying the many negative automatic thoughts we all experience so often. I am always available and everything in our conversation will be kept private and anonymous, so feel free to message me anytime and talk to me about anything that's on your mind."
+
+what_is_CBT = "Cognitive behavioural therapy (CBT) is a mental exercise proven to be one of the best methods to improve daily mood and overall health. The key steps in CBT is to: identify and get to know automatic negative thoughts that are spontaneously triggered, ask whether there is concrete evidence or good reason to feel the way you do, challenge your initial thoughts by doubting your instincts, and find an alternative to view the thought or situation."
+
+cbt_prompts = [ "(Free Prompt / Warm-up) What's on your mind?",
+                "(Identifying automatic thought) What thought first crossed your mind? This was probably a subconscious or automatic thought that you have had before.",
+                "(Challenge your automatic thought) What facts do you have that support or challenge your initial thought?",
+                "(Exercise alternative thinking) How could you re-write your thoughts into a different perspective?"]
+
+#*--------------------------------------------------------------------------------------------*#
+
+#recieving from front end
+# text = {
+# 	"state" : ,
+# 	"message" : ""
+# }
+text = sys.argv[1]
+send_text = {
+	"state" : "",
+	"messages" :[
+		{
+			"message" : "fjeiwofjeioajfoea", 
+			"mood" :  "7"
+		}
+		]
+}
+#	   0				1  				     2						3 				 4 		  5
+#"free_prompt", "id_neg_thought", "challenge_neg_thought", "exercise_alt_thought", "start", "help"
+if(text["state"] == "free_prompt"):
+	send_text["messages"].append({"message":cbt_prompts[0], "7"})
+	send_text["state"] = "free_prompt_sent"
+elif(text["state"] == "id_neg_thought"):
+	send_text["messages"].append({"message":cbt_prompts[1], "7"})
+	send_text["state"] = "id_neg_thought_sent"
+elif(text["state"] == "challenge_neg_thought"):
+	send_text["messages"].append({"message":cbt_prompts[2], "7"})
+	send_text["state"] = "challenge_neg_thought_sent"
+elif(text["state"] == "exercise_alt_thought"):
+	send_text["messages"].append({"message":cbt_prompts[3], "7"})
+	send_text["state"] = "exercise_alt_thought_sent"
+elif(text["state"] == "start"):
+	send_text["messages"].append({"message":introduction, "7"})
+	send_text["state"] = "start_sent"
+elif(text["state"] == "help"):
+	send_text["messages"].append({"message":what_is_CBT, "7"})
+	send_text["state"] = "help_sent"
+
+jsonData = json.dumps(send_text)
+print(jsonData)
+sys.stdout.flush()
+
+#  0		   1         2         3          4             5              6	   7
+#"Joy", "Sadness", "Anger", "Anxiety", "Tentative", "Confidence", "Analytical", "none"
+
+>>>>>>> e5087c5592b0b90a15711f8caef2aaaf7eb8d900
 
 
 #*--------------------------------------------------------------------------------------------*#

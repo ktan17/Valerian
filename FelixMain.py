@@ -9,8 +9,8 @@ import datetime, time, calendar
 import firebase_admin
 from firebase_admin import credentials
 
-# cred = credentials.Certificate("path/to/serviceAccountKey.json")
-# firebase_admin.initialize_app(cred)
+cred = credentials.Certificate("/Users/alanyuen/Desktop/felix-e20e1-firebase-adminsdk-ixr6p-28612afd74.json")
+firebase_admin.initialize_app(cred)
 
 with open("/Users/alanyuen/Desktop/Felix/NOTHING_TO_SEE_HERE.txt", "r") as f:
 	lines = f.readlines()
@@ -242,8 +242,8 @@ tones = {"Tones": {}}
 # bad_text2 = "I failed my test. I can't believe I am so careless. I should have studied more, but I didn't because I'm lazy. I won't get into the college I really want to get into."
 # good_text2 = "The next time I make a mistake, I won't dwell on the negatives. I will remind myself of my past successes. I will remember to be kind to myself and to others."
 
-text = "Insert Text Here"
-insert_data(sentences, keyphrases, tones, text)
+# text = "Insert Text Here"
+# insert_data(sentences, keyphrases, tones, text)
 
 """
 	DailyJoy %: 0.2327391110194038
@@ -319,7 +319,6 @@ weekly_history = {[
 					} for i in range(7)
 				]}
 
-
 def calc_daily_sentiment(sentences, metadata):
 	total_sentiment = 0
 	num_sentences_today = 0
@@ -355,10 +354,10 @@ def calc_daily_tones(sentences, metadata):
 				metadata[metadata_title][1] += 1
 
 #2012-12-15 01:21:05
+
 """
 def calc_weekly_tones(sentences, metadata):
 
-	
 	todays_date = ""
 	current_year = int(todays_date[:4])
 	current_month = int(todays_date[5:7])
@@ -390,6 +389,7 @@ def calc_weekly_tones(sentences, metadata):
 				metadata[metadata_title][0] += t["score"]
 				metadata[metadata_title][1] += 1
 """
+
 #  0		   1         2         3          4             5              6
 #"Joy", "Sadness", "Anger", "Anxiety", "Tentative", "Confidence", "Analytical"
 # ["DailyJoy","DailySadness","DailyAnger","DailyAnxiety","DailyTentative","DailyConfidence","DailyAnalytical"]
@@ -413,13 +413,15 @@ cbt_prompts = [ "(Free Prompt / Warm-up) What's on your mind?",
                 "(Identifying automatic thought) What thought first crossed your mind? This was probably a subconscious or automatic thought that you have had before.",
                 "(Challenge your automatic thought) What facts do you have that support or challenge your initial thought?",
                 "(Exercise alternative thinking) How could you re-write your thoughts into a different perspective?"]
+
 #*--------------------------------------------------------------------------------------------*#
 
 #recieving from front end
-text = {
-	"state" : "",
-	"message" : ""
-}
+# text = {
+# 	"state" : ,
+# 	"message" : ""
+# }
+text = sys.argv[1]
 send_text = {
 	"state" : "",
 	"messages" :[
@@ -433,22 +435,22 @@ send_text = {
 #"free_prompt", "id_neg_thought", "challenge_neg_thought", "exercise_alt_thought", "start", "help"
 if(text["state"] == "free_prompt"):
 	send_text["messages"].append({"message":cbt_prompts[0], "7"})
-	send_text["state"] = "free_prompt"
+	send_text["state"] = "free_prompt_sent"
 elif(text["state"] == "id_neg_thought"):
 	send_text["messages"].append({"message":cbt_prompts[1], "7"})
-	send_text["state"] = "id_neg_thought"
+	send_text["state"] = "id_neg_thought_sent"
 elif(text["state"] == "challenge_neg_thought"):
 	send_text["messages"].append({"message":cbt_prompts[2], "7"})
-	send_text["state"] = "challenge_neg_thought"
+	send_text["state"] = "challenge_neg_thought_sent"
 elif(text["state"] == "exercise_alt_thought"):
 	send_text["messages"].append({"message":cbt_prompts[3], "7"})
-	send_text["state"] = "exercise_alt_thought"
+	send_text["state"] = "exercise_alt_thought_sent"
 elif(text["state"] == "start"):
 	send_text["messages"].append({"message":introduction, "7"})
-	send_text["state"] = "start"
+	send_text["state"] = "start_sent"
 elif(text["state"] == "help"):
 	send_text["messages"].append({"message":what_is_CBT, "7"})
-	send_text["state"] = "help"
+	send_text["state"] = "help_sent"
 
 jsonData = json.dumps(send_text)
 print(jsonData)

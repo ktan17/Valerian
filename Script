@@ -1,0 +1,116 @@
+"""
+How are you feeling?
+	Analytical:
+		+ Sentiment: I sense you are analytical and positive in your response. Do you want to talk about it more? (y/n)
+		- Sentiment: I sense you are analytical and positive in your response. Do you want to talk about it more? (y/n)
+
+	Confidence:
+		+ Sentiment: I sense you know your situation well.
+		- Sentiment:
+
+	Tentative:
+		+ Sentiment:
+		- Sentiment:
+
+	Anger:
+		+ Sentiment:
+		- Sentiment:
+
+	Anxiety:
+		+ Sentiment:
+		- Sentiment:
+
+	Joy:
+		+ Sentiment:
+		- Sentiment:
+
+	Sadness:
+		+ Sentiment:
+		- Sentiment:
+
+ID Negative Thought Pattern:
+	Analytical:
+		+ Sentiment: I sense you are analytical and positive in your response. Do you want to talk about it more? (y/n)
+		- Sentiment: I sense you are thinking about what happened. This is a good start! Identifying automatic behaviours are hard, but is a key first step. Let's take a look at the situation a little closer.
+
+	Confidence:
+		+ Sentiment: I sense you are sure about what you are feeling. That's a good head start! Would you like to take a closer look? (y/n)
+		- Sentiment: I understand life may present unfair obstacles. This is a good start, as I sense that you have identified what you want to resolve. Let's take a closer look.
+
+	Tentative:
+		+ Sentiment: Life is often complicated. I sense that there is uncertainty involved in the situation. Many negative and, even, positive thought patterns are very difficult to clearly identify due to their automatic nature. Let's take a closer look.
+		- Sentiment: Life is often complicated. I sense that there is uncertainty involved in the situation. Many negative thought patterns are very difficult to clearly identify due to their automatic nature. Let's take a closer look.
+
+	Anger:
+		+ Sentiment: I understand life may present unfair obstacles. This is a good start, as I sense that you have identified what you want to resolve. Let's take a closer look.
+		- Sentiment: I understand life may present unfair obstacles. This is a good start, as I sense that you have identified what you want to resolve. Let's take a closer look.
+
+	Anxiety:
+		+ Sentiment: I sense anxiety. Anxiety is a very normal part of being human! There are techniques that may help mitigate this feeling. Let's take a closer look.
+		- Sentiment: I sense anxiety. Anxiety is a very normal part of being human! There are techniques that may help mitigate this feeling. Let's take a closer look.
+
+	Joy:
+		+ Sentiment: I sense you are sure about what you are feeling. That's a good head start! Would you like to take a closer look? (y/n)
+		- Sentiment: I sense you are sure about what you are feeling. That's a good head start! Would you like to take a closer look? (y/n)
+
+	Sadness:
+		+ Sentiment: I understand life may present unfair obstacles. This is a good start, as I sense that you have identified what you want to resolve. Let's take a closer look.
+		- Sentiment: I understand life may present unfair obstacles. This is a good start, as I sense that you have identified what you want to resolve. Let's take a closer look.
+
+Challenge negative thought
+	Analytical:
+		+ Sentiment: I sense you are analytic in your response! Great job! It is a very difficult step to challenge your thoughts. Let's see how we can use this to find an alternative perspective.
+		- Sentiment: I sense you are analytic in your response! Great job! It is a very difficult step to challenge your thoughts. Even though it might not feel like there's a solution, this is a start. Let's see if we can find an alternative perspective.
+
+	Confidence:
+		+ Sentiment: I sense you are confident in your response! Great job! It is a very difficult step to challenge your thoughts. Let's see how we can use this to find an alternative perspective.
+		- Sentiment: I sense you are confident in your response. It is difficult to challenge negative thoughts because they are often distracting. Can you find any evidence to refute this negative thought? Let's try to find an alternative perspective in a positive direction, no matter how small it is. Every bit counts! :)
+
+	Tentative:
+		+ Sentiment: I understand it is very difficult to 
+		- Sentiment:
+
+	Anger:
+		+ Sentiment:
+		- Sentiment:
+
+	Anxiety:
+		+ Sentiment:
+		- Sentiment:
+
+	Joy:
+		+ Sentiment:
+		- Sentiment:
+
+	Sadness:
+		+ Sentiment:
+		- Sentiment:
+
+Find an alternative perspective
+	Analytical:
+		+ Sentiment: I see you are analytical and positive in your response. Do you want to talk about it more? (y/n)
+		- Sentiment: I see you are thinking about what happened. This is a good start! Identifying automatic behaviours are hard, but is a key first step. Let's take a look at the situation a little closer.
+
+	Confidence:
+		+ Sentiment:
+		- Sentiment:
+
+	Tentative:
+		+ Sentiment:
+		- Sentiment:
+
+	Anger:
+		+ Sentiment:
+		- Sentiment:
+
+	Anxiety:
+		+ Sentiment:
+		- Sentiment:
+
+	Joy:
+		+ Sentiment:
+		- Sentiment:
+
+	Sadness:
+		+ Sentiment:
+		- Sentiment:
