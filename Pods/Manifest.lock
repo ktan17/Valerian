@@ -1,18 +1,21 @@
 PODS:
   - Alamofire (4.5.1)
+  - CorePlot (2.2)
   - JSQMessagesViewController (7.3.5):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - CorePlot (~> 2.2)
   - JSQMessagesViewController
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  CorePlot: cbe0c6e14220705e32e06a89c7d6a5a908b7d7d8
   JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
 
-PODFILE CHECKSUM: 880955d58f6974f0f7b331aaa6a4fdba258bfa10
+PODFILE CHECKSUM: 60eaa63522d39e896cf5bf4fe850cd30bf81d7e1
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.4.0
