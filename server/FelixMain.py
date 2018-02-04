@@ -6,16 +6,10 @@ from watson_developer_cloud.tone_analyzer_v3 import*
 import boto3
 import os, six, sys, json
 import datetime, time, calendar
-<<<<<<< HEAD
-=======
-import firebase_admin
-from firebase_admin import credentials
 
-cred = credentials.Certificate("/Users/alanyuen/Desktop/felix-e20e1-firebase-adminsdk-ixr6p-28612afd74.json")
-firebase_admin.initialize_app(cred)
->>>>>>> e5087c5592b0b90a15711f8caef2aaaf7eb8d900
 
-with open("/Users/alanyuen/Desktop/Felix/NOTHING_TO_SEE_HERE.txt", "r") as f:
+
+with open("./NOTHING_TO_SEE_HERE.txt", "r") as f:
 	lines = f.readlines()
 	google_creds_key =lines[0].rstrip()
 	WatsonUsername = lines[1].rstrip()
@@ -199,10 +193,7 @@ def insert_data(sentences, keyphrases, tones, text):
 										} for j in range(len(tone["sentences_tone"][i]["tones"]))]
 		i+=1
 
-<<<<<<< HEAD
-=======
 
->>>>>>> e5087c5592b0b90a15711f8caef2aaaf7eb8d900
 	"""
 	MetaData
 	{
@@ -237,48 +228,6 @@ def insert_data(sentences, keyphrases, tones, text):
 	}
 	"""
 
-#													RUNS API
-#*--------------------------------------------------------------------------------------------*#
-sentences = {"Sentences": {}}
-keyphrases = {"KeyPhrases": []}
-tones = {"Tones": {}}
-
-# bad_text = "I said something wrong at a social event. I felt embarrassed and later I was anxious thinking about it. I feel like a failure. I worry that people will judge me. I hate that I feel this way inside, and that I’m always making dumb mistakes."
-# good_text  = "It's okay if I make mistakes. I have some strengths that people appreciate. I want to get rid of this negative thinking. I feel better when I am kind to myself."
-# bad_text2 = "I failed my test. I can't believe I am so careless. I should have studied more, but I didn't because I'm lazy. I won't get into the college I really want to get into."
-# good_text2 = "The next time I make a mistake, I won't dwell on the negatives. I will remind myself of my past successes. I will remember to be kind to myself and to others."
-
-<<<<<<< HEAD
-text = "Insert Text Here"
-insert_data(sentences, keyphrases, tones, text)
-=======
-# text = "Insert Text Here"
-# insert_data(sentences, keyphrases, tones, text)
->>>>>>> e5087c5592b0b90a15711f8caef2aaaf7eb8d900
-
-"""
-	DailyJoy %: 0.2327391110194038
-	DailySadness %: 0.1317459084252313
-	DailyAnger %: 0.0
-	DailyAnxiety %: 0.0
-	DailyTentative %: 0.23777130801441795
-	DailyConfidence %: 0.0
-	DailyAnalytical %: 0.3977436725409469
-"""
-"""
-	DailyJoy %: 0.0
-	DailySadness %: 0.29244234030887645
-	DailyAnger %: 0.0736758904323269
-	DailyAnxiety %: 0.17077570662441838
-	DailyTentative %: 0.19866165957937207
-	DailyConfidence %: 0.0
-	DailyAnalytical %: 0.26444440305500616
-"""
-
-print(json.dumps(sentences,indent=2))
-print(json.dumps(keyphrases,indent=2))
-print(json.dumps(tones,indent=2))
-
 
 #*--------------------------------------------------------------------------------------------*#
 
@@ -304,36 +253,8 @@ print(json.dumps(tones,indent=2))
 # print(json.dumps(sentences,indent=2))
 # print(json.dumps(keyphrases,indent=2))
 # print(json.dumps(tones,indent=2))
-#*--------------------------------------------------------------------------------------------*#
-metadata = {
-				"Today" : "2018-02-04",
-				"DailySentiment" : [0.0 , 0],
-				"DailyJoy" : [0.0 , 0],
-				"DailySadness" : [0.0 , 0],
-				"DailyAnxiety" : [0.0 , 0],
-				"DailyAnger" : [0.0 , 0],
-				"DailyTentative" : [0.0 , 0],
-				"DailyConfidence" : [0.0 , 0],
-				"DailyAnalytical" : [0.0 , 0]
-			}
 
-weekly_history = {[
-					{
-						"DailySentiment" : [0.0 , 0],
-						"DailyJoy" : [0.0 , 0],
-						"DailySadness" : [0.0 , 0],
-						"DailyAnxiety" : [0.0 , 0],
-						"DailyAnger" : [0.0 , 0],
-						"DailyTentative" : [0.0 , 0],
-						"DailyConfidence" : [0.0 , 0],
-						"DailyAnalytical" : [0.0 , 0]
-					} for i in range(7)
-				]}
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e5087c5592b0b90a15711f8caef2aaaf7eb8d900
 def calc_daily_sentiment(sentences, metadata):
 	total_sentiment = 0
 	num_sentences_today = 0
@@ -367,21 +288,11 @@ def calc_daily_tones(sentences, metadata):
 
 				metadata[metadata_title][0] += t["score"]
 				metadata[metadata_title][1] += 1
-<<<<<<< HEAD
-#2012-12-15 01:21:05
-"""
-def calc_weekly_tones(sentences, metadata):
-
-	
-=======
-
-#2012-12-15 01:21:05
 
 """
 def calc_weekly_tones(sentences, metadata):
 
->>>>>>> e5087c5592b0b90a15711f8caef2aaaf7eb8d900
-	todays_date = ""
+	todays_date = ""#2012-12-15 01:21:05
 	current_year = int(todays_date[:4])
 	current_month = int(todays_date[5:7])
 	week_ago_date = todays_date - 7 + calendar.monthrange(current_year,current_month)[1]
@@ -412,12 +323,9 @@ def calc_weekly_tones(sentences, metadata):
 				metadata[metadata_title][0] += t["score"]
 				metadata[metadata_title][1] += 1
 """
-<<<<<<< HEAD
-=======
 
 #  0		   1         2         3          4             5              6
 #"Joy", "Sadness", "Anger", "Anxiety", "Tentative", "Confidence", "Analytical"
->>>>>>> e5087c5592b0b90a15711f8caef2aaaf7eb8d900
 # ["DailyJoy","DailySadness","DailyAnger","DailyAnxiety","DailyTentative","DailyConfidence","DailyAnalytical"]
 def normalize_main_emo(metadata):
 	emos = ["DailyJoy","DailySadness","DailyAnger","DailyAnxiety","DailyTentative","DailyConfidence","DailyAnalytical"]
@@ -427,13 +335,83 @@ def normalize_main_emo(metadata):
 	for emo in emos:
 		print("{} %: {}".format(emo, metadata[emo][0]/float(total)))
 
-normalize_main_emo(metadata)
-
-<<<<<<< HEAD
 
 #*--------------------------------------------------------------------------------------------*#
+#											RUNS API
+#*--------------------------------------------------------------------------------------------*#
+# import firebase_admin
+# from firebase_admin import credentials
+# cred = credentials.Certificate("/Users/alanyuen/Desktop/felix-e20e1-firebase-adminsdk-ixr6p-28612afd74.json")
 
-=======
+# # Initialize the app with a service account, granting admin privileges
+# firebase_admin.initialize_app(cred, {
+#     'databaseURL': 'https://felix-e20e1.firebaseio.com/'
+# })
+
+# # As an admin, the app has access to read and write all data, regradless of Security Rules
+# ref = db.reference('restricted_access/secret_document')
+# print(ref.get())
+
+sentences = {"Sentences": {}}
+keyphrases = {"KeyPhrases": []}
+tones = {"Tones": {}}
+
+#recieving from front end
+# text = {
+# 	"state" : "",
+# 	"message" : ""
+# }
+
+text = json.loads(sys.argv[1])
+
+# bad_text = "I said something wrong at a social event. I felt embarrassed and later I was anxious thinking about it. I feel like a failure. I worry that people will judge me. I hate that I feel this way inside, and that I'm always making dumb mistakes."
+# good_text  = "It's okay if I make mistakes. I have some strengths that people appreciate. I want to get rid of this negative thinking. I feel better when I am kind to myself."
+# bad_text2 = "I failed my test. I can't believe I am so careless. I should have studied more, but I didn't because I'm lazy. I won't get into the college I really want to get into."
+# good_text2 = "The next time I make a mistake, I won't dwell on the negatives. I will remind myself of my past successes. I will remember to be kind to myself and to others."
+
+# text = "Insert Text Here"
+# insert_data(sentences, keyphrases, tones, text["message"])
+
+# print(json.dumps(sentences,indent=2))
+# print(json.dumps(keyphrases,indent=2))
+# print(json.dumps(tones,indent=2))
+
+# result = firebase.post("/businesses", sent)
+
+metadata = {
+				"Today" : "2018-02-04",
+				"DailySentiment" : [0.0 , 0],
+				"DailyJoy" : [0.0 , 0],
+				"DailySadness" : [0.0 , 0],
+				"DailyAnxiety" : [0.0 , 0],
+				"DailyAnger" : [0.0 , 0],
+				"DailyTentative" : [0.0 , 0],
+				"DailyConfidence" : [0.0 , 0],
+				"DailyAnalytical" : [0.0 , 0]
+			}
+
+# weekly_history = {[
+# 					{
+# 						"DailySentiment" : [0.0 , 0],
+# 						"DailyJoy" : [0.0 , 0],
+# 						"DailySadness" : [0.0 , 0],
+# 						"DailyAnxiety" : [0.0 , 0],
+# 						"DailyAnger" : [0.0 , 0],
+# 						"DailyTentative" : [0.0 , 0],
+# 						"DailyConfidence" : [0.0 , 0],
+# 						"DailyAnalytical" : [0.0 , 0]
+# 					} for i in range(7)
+# 				]}
+
+
+
+# normalize_main_emo(metadata)
+
+
+
+#			Chat Script
+#*--------------------------------------------------------------------------------------------*#
+
 introduction = "Hi. My name is Felix! I am here to help you exercise healthy ways of thinking, through a process called cognitive behavioural therapy (CBT)."
 # This method is proven to be one of the best options to improve daily mood and overall health. I am also attentative of the meaning of your words in order to help you identify thought patterns and keep track of your mood day-to-day. 
 # You can think of me as a tool to help you tackle the difficult task of identifying the many negative automatic thoughts we all experience so often. I am always available and everything in our conversation will be kept private and anonymous, so feel free to message me anytime and talk to me about anything that's on your mind."
@@ -445,14 +423,14 @@ cbt_prompts = [ "(Free Prompt / Warm-up) What's on your mind?",
                 "(Challenge your automatic thought) What facts do you have that support or challenge your initial thought?",
                 "(Exercise alternative thinking) How could you re-write your thoughts into a different perspective?"]
 
-#*--------------------------------------------------------------------------------------------*#
+
 
 #recieving from front end
-# text = {
-# 	"state" : ,
-# 	"message" : ""
-# }
-text = sys.argv[1]
+#text = {
+#	"state" : "start",
+#	"message" : ""
+#}
+
 send_text = {
 	"state" : "",
 	"messages" :[
@@ -465,62 +443,28 @@ send_text = {
 #	   0				1  				     2						3 				 4 		  5
 #"free_prompt", "id_neg_thought", "challenge_neg_thought", "exercise_alt_thought", "start", "help"
 if(text["state"] == "free_prompt"):
-	send_text["messages"].append({"message":cbt_prompts[0], "7"})
+	send_text["messages"].append({"message":cbt_prompts[0], "mood" :  "7"})
 	send_text["state"] = "free_prompt_sent"
 elif(text["state"] == "id_neg_thought"):
-	send_text["messages"].append({"message":cbt_prompts[1], "7"})
+	send_text["messages"].append({"message":cbt_prompts[1], "mood" :  "7"})
 	send_text["state"] = "id_neg_thought_sent"
 elif(text["state"] == "challenge_neg_thought"):
-	send_text["messages"].append({"message":cbt_prompts[2], "7"})
+	send_text["messages"].append({"message":cbt_prompts[2], "mood" :  "7"})
 	send_text["state"] = "challenge_neg_thought_sent"
 elif(text["state"] == "exercise_alt_thought"):
-	send_text["messages"].append({"message":cbt_prompts[3], "7"})
+	send_text["messages"].append({"message":cbt_prompts[3], "mood" :  "7"})
 	send_text["state"] = "exercise_alt_thought_sent"
 elif(text["state"] == "start"):
-	send_text["messages"].append({"message":introduction, "7"})
+	send_text["messages"].append({"message":introduction,  "mood" : "7"})
 	send_text["state"] = "start_sent"
 elif(text["state"] == "help"):
-	send_text["messages"].append({"message":what_is_CBT, "7"})
+	send_text["messages"].append({"message":what_is_CBT,  "mood" : "7"})
 	send_text["state"] = "help_sent"
 
 jsonData = json.dumps(send_text)
 print(jsonData)
 sys.stdout.flush()
 
+
 #  0		   1         2         3          4             5              6	   7
 #"Joy", "Sadness", "Anger", "Anxiety", "Tentative", "Confidence", "Analytical", "none"
-
->>>>>>> e5087c5592b0b90a15711f8caef2aaaf7eb8d900
-
-
-#*--------------------------------------------------------------------------------------------*#
-
-	#indices = [i for i, x in enumerate(text) if x == "."]
-	# for entity in result.entities:
-	# 	if(entity.name not in keyphrases):
-	# 		keyphrases[entity.name] = []
-
-	# 	sentence_ids = []
-
-	# 	for mention in entity.mentions:
-
-	# 		sentence_ids += [0]
-	# 		for i in range(len(indices)):
-	# 			if(mention.text.begin_offset < indices[i]):
-	# 			sentence_ids[-1] = i
-	# 			break
-
-	# 	#Keyphrase[entity.name] = [salience, sentiment score, sentiment magnitude, entity type]
-	# 	keyphrases[entity.name].append([sentence_ids, entity.salience, entity.sentiment.score, entity.sentiment.magnitude, entity_type[entity.type]])
-	# #print(keyphrases)
-
-# with open("/content/drive/Colab/FelixData/tone.json") as tone_json:
-# 	text_json = tone_json.read()
-# 	data_json = json.loads(text_json)
-
-# print(data_json["document_tone"])
-# print("\n")
-
-#entity_sentiment_text("Dan's parents were overweight. Dan was overweight as well. The doctors told his parents it was unhealthy. His parents understood and decided to make a change.")
-
-

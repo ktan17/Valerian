@@ -136,13 +136,20 @@ class ChatBotViewController: JSQMessagesViewController {
             
             print(response)
             
-            let sortedKeys = Array(response.keys).sorted(by: >)
+            let messages = response["messages"] as! [[String: Any]]
+            
+            for message in messages {
+                let newMessage = JSQMessage(senderId: "bot", senderDisplayName: "bot", date: Date(timeIntervalSinceNow: 0), text: message["message"] as! String)!
+                self.m_queuedMessages.append(newMessage)
+            }
+            
+            /*let sortedKeys = Array(response.keys).sorted(by: >)
             for key in sortedKeys {
                 
                 let newMessage = JSQMessage(senderId: "bot", senderDisplayName: "bot", date: Date(timeIntervalSinceNow: 0), text: response[key] as! String)!
                 self.m_queuedMessages.append(newMessage)
                 
-            }
+            }*/
             
             Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.dequeueMessages), userInfo: nil, repeats: true)
             

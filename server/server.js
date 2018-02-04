@@ -9,12 +9,15 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
     var object = req.body;
-    var message = object.user_message;
 
+    console.log(object);
+    console.log(JSON.stringify(object));
     var spawn = require('child_process').spawn;
-    var process = spawn('python', ["./FelixMain.py", message]);
-
+    var process = spawn('python', ["./FelixMain.py", JSON.stringify(object)]);
+    console.log("began python script");
+    
     process.stdout.on('data', (data) => {
+	console.log("received python data");
 	res.send(data);
     });
 })

@@ -23,8 +23,8 @@ class HTTPDelegate: NSObject, FelixHTTPDelegate {
     }
     
     func post(url: String, message: String, state: State, completion: @escaping ([String : Any]) -> Void) {
-        
-        Alamofire.request(url, method: .post, parameters: ["user_message" : message, "state" : state.rawValue], encoding: JSONEncoding(), headers: nil).responseJSON { (response) in
+        print("make add post")
+        Alamofire.request(url, method: .post, parameters: ["message" : message, "state" : state.rawValue], encoding: JSONEncoding(), headers: nil).responseJSON { (response) in
             guard response.result.isSuccess else {
                 return
             }
