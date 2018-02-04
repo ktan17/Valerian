@@ -1,3 +1,6 @@
+import sys
+import json
+
 introduction = "Hi. My name is Felix! I am here to help you exercise healthy ways of thinking, through a process called cognitive behavioural therapy (CBT). This method is proven to be one of the best options to improve daily mood and overall health. I am also attentative of the meaning of your words in order to help you identify thought patterns and keep track of your mood day-to-day. You can think of me as a tool to help you tackle the difficult task of identifying the many negative automatic thoughts we all experience so often. I am always available and everything in our conversation will be kept private and anonymous, so feel free to message me anytime and talk to me about anything that's on your mind."
 
 what_is_CBT = "Cognitive behavioural therapy (CBT) is a mental exercise proven to be one of the best methods to improve daily mood and overall health. The key steps in CBT is to: identify and get to know automatic negative thoughts that are spontaneously triggered, ask whether there is concrete evidence or good reason to feel the way you do, challenge your initial thoughts by doubting your instincts, and find an alternative to view the thought or situation."
@@ -7,10 +10,9 @@ cbt_prompts = [	"(Free Prompt / Warm-up) What's on your mind?",
 				"(Challenge your automatic thought) What facts do you have that support or challenge your initial thought?",
 				"(Exercise alternative thinking) How could you re-write your thoughts into a different perspective?"]
 
-
-print(introduction)
-print()
-print(what_is_CBT)
+jsonData = json.dumps({"0": introduction, "1": what_is_CBT}, separators=(',',':'))
+print(jsonData)
+sys.stdout.flush()
 
 command_keywords = ["help"]
 
