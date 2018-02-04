@@ -80,7 +80,7 @@ class StatsViewController: UIViewController {
         
         // Label
         
-        var letterX = padding + (self.view.frame.width - 2*padding) / 14
+        var letterX = padding + (self.view.frame.width - 2*padding - 8*sectionInsets.left) / 14
         for i in 0 ... 6 {
             let label = UILabel()
             label.font = UIFont(name: "Poppins-Bold", size: 12)

@@ -9,7 +9,8 @@ import datetime, time, calendar
 
 
 
-with open("/Users/alanyuen/Desktop/NOTHING_TO_SEE_HERE.txt", "r") as f:
+
+with open("./NOTHING_TO_SEE_HERE.txt", "r") as f:
 	lines = f.readlines()
 	google_creds_key =lines[0].rstrip()
 	WatsonUsername = lines[1].rstrip()
@@ -362,9 +363,10 @@ tones = {"Tones": {}}
 # 	"message" : ""
 # }
 
-#text = sys.argv[1]
+text = json.loads(sys.argv[1])
 
-# bad_text = "I said something wrong at a social event. I felt embarrassed and later I was anxious thinking about it. I feel like a failure. I worry that people will judge me. I hate that I feel this way inside, and that I’m always making dumb mistakes."
+# bad_text = "I said something wrong at a social event. I felt embarrassed and later I was anxious thinking about it. I feel like a failure. I worry that people will judge me. I hate that I feel this way inside, and that I'm always making dumb mistakes."
+
 # good_text  = "It's okay if I make mistakes. I have some strengths that people appreciate. I want to get rid of this negative thinking. I feel better when I am kind to myself."
 # bad_text2 = "I failed my test. I can't believe I am so careless. I should have studied more, but I didn't because I'm lazy. I won't get into the college I really want to get into."
 # good_text2 = "The next time I make a mistake, I won't dwell on the negatives. I will remind myself of my past successes. I will remember to be kind to myself and to others."
@@ -426,10 +428,10 @@ cbt_prompts = [ "(Free Prompt / Warm-up) What's on your mind?",
 
 
 #recieving from front end
-text = {
-	"state" : "start",
-	"message" : ""
-}
+#text = {
+#	"state" : "start",
+#	"message" : ""
+#}
 
 send_text = {
 	"state" : "",
