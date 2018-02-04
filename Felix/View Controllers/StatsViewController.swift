@@ -32,14 +32,27 @@ class StatsViewController: UIViewController {
     
     // Methods - Functions (Member functions)
     
+    @objc func randomize() {
+        for i in 0 ... 27 {
+            m_moods[i] = CGFloat(drand48())
+        }
+        
+        if let heatMap = scrollView.viewWithTag(5) as? UICollectionView {
+            heatMap.reloadData()
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Timer.scheduledTimer(timeInterval: 7.0, target: self, selector: #selector(self.randomize), userInfo: nil, repeats: true)
         
         let padding: CGFloat = 15
         let graphSide: CGFloat = 300
         let labelHeight: CGFloat = 50
         let letterHeight: CGFloat = 20
-        let mapHeight: CGFloat = 200
+        let mapHeight: CGFloat = 250
         let summaryHeight: CGFloat = 100
         
         let scrollViewHeight = 7.25*padding + graphSide + 3*labelHeight + letterHeight + mapHeight + summaryHeight
@@ -118,6 +131,7 @@ class StatsViewController: UIViewController {
         heatCollection.backgroundColor = .white
         heatCollection.delegate = self
         heatCollection.dataSource = self
+        heatCollection.tag = 5
         
         scrollView.addSubview(heatCollection)
         yOrigin += heatCollection.frame.height + padding*2

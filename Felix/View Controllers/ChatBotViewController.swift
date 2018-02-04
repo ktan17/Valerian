@@ -23,10 +23,11 @@ enum FelixEmotion: Int {
 enum State: String {
     case FREE_PROMPT = "free_prompt"
     case ID_NEG_THOUGHT = "id_neg_thought"
-    case CHALLENGE = "challenge_neg_thought"
-    case EXERCISE = "exercise_alt_thought"
+    case CHALLENGE = "challengenegthought"
+    case EXERCISE = "exercisealternativethought"
     case START = "start"
     case HELP = "help"
+    case GOODBYE = "good_bye"
 }
 
 class ChatBotViewController: JSQMessagesViewController {
@@ -74,6 +75,30 @@ class ChatBotViewController: JSQMessagesViewController {
         self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize(width: 40, height: 40)
         self.collectionView.collectionViewLayout.outgoingAvatarViewSize = .zero
         self.inputToolbar.contentView.leftBarButtonItem = nil
+        
+        m_httpDelegate.post(url: "http://localhost:8080/", message: "", state: .START) { (response) in
+            
+            let nextState = response["state"] as! String
+            let messages = response["messages"] as! [[String: Any]]
+            
+            self.m_currentState = State(rawValue: nextState) ?? .START
+            for message in messages {
+                let newMessage = JSQMessage(senderId: "bot", senderDisplayName: "bot", date: Date(timeIntervalSinceNow: 0), text: message["message"] as! String)!
+                let mood = message["mood"] as! String
+                self.m_queuedMessages.append(newMessage)
+                self.m_queuedEmotions.append(FelixEmotion(rawValue: Int(mood)!)!)
+            }
+            
+            /*let sortedKeys = Array(response.keys).sorted(by: >)
+             for key in sortedKeys {
+             
+             let newMessage = JSQMessage(senderId: "bot", senderDisplayName: "bot", date: Date(timeIntervalSinceNow: 0), text: response[key] as! String)!
+             self.m_queuedMessages.append(newMessage)
+             
+             }*/
+            
+            Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.dequeueMessages), userInfo: nil, repeats: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -140,11 +165,14 @@ class ChatBotViewController: JSQMessagesViewController {
         self.collectionView.reloadData()
         finishSendingMessage()
         
-        m_httpDelegate.post(url: "https://felixserver.herokuapp.com/", message: text, state: m_currentState) { (response) in
+        m_httpDelegate.post(url: "http://localhost:8080/", message: text, state: m_currentState) { (response) in
             
             print(response)
             
+            let nextState = response["state"] as! String
             let messages = response["messages"] as! [[String: Any]]
+            
+            self.m_currentState = State(rawValue: nextState) ?? .START
             
             for message in messages {
                 let newMessage = JSQMessage(senderId: "bot", senderDisplayName: "bot", date: Date(timeIntervalSinceNow: 0), text: message["message"] as! String)!

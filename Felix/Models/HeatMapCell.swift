@@ -23,7 +23,12 @@ class HeatMapCell: UICollectionViewCell {
             self.backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.49, alpha: 1.00)
         }
         
-        self.alpha = value
+        if value != self.alpha {
+            UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseInOut, animations: {
+                self.alpha = value
+            }, completion: nil)
+        }
+        
         self.frame.size = CGSize(width: side, height: side)
         
     }
