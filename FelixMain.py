@@ -6,6 +6,11 @@ from watson_developer_cloud.tone_analyzer_v3 import*
 import boto3
 import os, six, sys, json
 import datetime, time, calendar
+import firebase_admin
+from firebase_admin import credentials
+
+# cred = credentials.Certificate("path/to/serviceAccountKey.json")
+# firebase_admin.initialize_app(cred)
 
 with open("/Users/alanyuen/Desktop/Felix/NOTHING_TO_SEE_HERE.txt", "r") as f:
 	lines = f.readlines()
@@ -191,6 +196,7 @@ def insert_data(sentences, keyphrases, tones, text):
 										} for j in range(len(tone["sentences_tone"][i]["tones"]))]
 		i+=1
 
+
 	"""
 	MetaData
 	{
@@ -347,6 +353,7 @@ def calc_daily_tones(sentences, metadata):
 
 				metadata[metadata_title][0] += t["score"]
 				metadata[metadata_title][1] += 1
+
 #2012-12-15 01:21:05
 """
 def calc_weekly_tones(sentences, metadata):
@@ -383,6 +390,8 @@ def calc_weekly_tones(sentences, metadata):
 				metadata[metadata_title][0] += t["score"]
 				metadata[metadata_title][1] += 1
 """
+#  0		   1         2         3          4             5              6
+#"Joy", "Sadness", "Anger", "Anxiety", "Tentative", "Confidence", "Analytical"
 # ["DailyJoy","DailySadness","DailyAnger","DailyAnxiety","DailyTentative","DailyConfidence","DailyAnalytical"]
 def normalize_main_emo(metadata):
 	emos = ["DailyJoy","DailySadness","DailyAnger","DailyAnxiety","DailyTentative","DailyConfidence","DailyAnalytical"]
@@ -394,8 +403,59 @@ def normalize_main_emo(metadata):
 
 normalize_main_emo(metadata)
 
+introduction = "Hi. My name is Felix! I am here to help you exercise healthy ways of thinking, through a process called cognitive behavioural therapy (CBT)."
+# This method is proven to be one of the best options to improve daily mood and overall health. I am also attentative of the meaning of your words in order to help you identify thought patterns and keep track of your mood day-to-day. 
+# You can think of me as a tool to help you tackle the difficult task of identifying the many negative automatic thoughts we all experience so often. I am always available and everything in our conversation will be kept private and anonymous, so feel free to message me anytime and talk to me about anything that's on your mind."
 
+what_is_CBT = "Cognitive behavioural therapy (CBT) is a mental exercise proven to be one of the best methods to improve daily mood and overall health. The key steps in CBT is to: identify and get to know automatic negative thoughts that are spontaneously triggered, ask whether there is concrete evidence or good reason to feel the way you do, challenge your initial thoughts by doubting your instincts, and find an alternative to view the thought or situation."
+
+cbt_prompts = [ "(Free Prompt / Warm-up) What's on your mind?",
+                "(Identifying automatic thought) What thought first crossed your mind? This was probably a subconscious or automatic thought that you have had before.",
+                "(Challenge your automatic thought) What facts do you have that support or challenge your initial thought?",
+                "(Exercise alternative thinking) How could you re-write your thoughts into a different perspective?"]
 #*--------------------------------------------------------------------------------------------*#
+
+#recieving from front end
+text = {
+	"state" : "",
+	"message" : ""
+}
+send_text = {
+	"state" : "",
+	"messages" :[
+		{
+			"message" : "fjeiwofjeioajfoea", 
+			"mood" :  "7"
+		}
+		]
+}
+#	   0				1  				     2						3 				 4 		  5
+#"free_prompt", "id_neg_thought", "challenge_neg_thought", "exercise_alt_thought", "start", "help"
+if(text["state"] == "free_prompt"):
+	send_text["messages"].append({"message":cbt_prompts[0], "7"})
+	send_text["state"] = "free_prompt"
+elif(text["state"] == "id_neg_thought"):
+	send_text["messages"].append({"message":cbt_prompts[1], "7"})
+	send_text["state"] = "id_neg_thought"
+elif(text["state"] == "challenge_neg_thought"):
+	send_text["messages"].append({"message":cbt_prompts[2], "7"})
+	send_text["state"] = "challenge_neg_thought"
+elif(text["state"] == "exercise_alt_thought"):
+	send_text["messages"].append({"message":cbt_prompts[3], "7"})
+	send_text["state"] = "exercise_alt_thought"
+elif(text["state"] == "start"):
+	send_text["messages"].append({"message":introduction, "7"})
+	send_text["state"] = "start"
+elif(text["state"] == "help"):
+	send_text["messages"].append({"message":what_is_CBT, "7"})
+	send_text["state"] = "help"
+
+jsonData = json.dumps(send_text)
+print(jsonData)
+sys.stdout.flush()
+
+#  0		   1         2         3          4             5              6	   7
+#"Joy", "Sadness", "Anger", "Anxiety", "Tentative", "Confidence", "Analytical", "none"
 
 
 
