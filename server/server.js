@@ -12,7 +12,7 @@ app.post('/', (req, res) => {
     var message = object.user_message;
 
     var spawn = require('child_process').spawn;
-    var process = spawn('python', ["./Felix_script.py", message]);
+    var process = spawn('python', ["./FelixMain.py", message]);
 
     process.stdout.on('data', (data) => {
 	res.send(data);

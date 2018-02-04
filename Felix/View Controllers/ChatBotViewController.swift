@@ -20,12 +20,23 @@ enum FelixEmotion: Int {
     case PROUD
 }
 
+enum State: String {
+    case FREE_PROMPT = "free_prompt"
+    case ID_NEG_THOUGHT = "id_neg_thought"
+    case CHALLENGE = "challenge_neg_thought"
+    case EXERCISE = "exercise_alt_thought"
+    case START = "start"
+    case HELP = "help"
+}
+
 class ChatBotViewController: JSQMessagesViewController {
 
     // Properties
     
     private var m_messages = [JSQMessage]()
     private var m_queuedMessages = [JSQMessage]()
+    
+    private var m_currentState: State = .START
     
     private lazy var m_outgoingBubble = setupOutgoingBubble()
     private lazy var m_incomingBubble = setupIncomingBubble()
@@ -56,22 +67,6 @@ class ChatBotViewController: JSQMessagesViewController {
         
         self.collectionView.collectionViewLayout.outgoingAvatarViewSize = .zero
         self.inputToolbar.contentView.leftBarButtonItem = nil
-        
-        m_httpDelegate.post(url: "https://hackuci-felix.herokuapp.com/", message: "christine is kool") { (response) in
-            
-            print(response)
-            
-            let sortedKeys = Array(response.keys).sorted(by: >)
-            for key in sortedKeys {
-                
-                let newMessage = JSQMessage(senderId: "bot", senderDisplayName: "bot", date: Date(timeIntervalSinceNow: 0), text: response[key] as! String)!
-                self.m_queuedMessages.append(newMessage)
-                
-            }
-            
-            Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.dequeueMessages), userInfo: nil, repeats: true)
-            
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -136,6 +131,22 @@ class ChatBotViewController: JSQMessagesViewController {
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
         self.collectionView.reloadData()
         finishSendingMessage()
+        
+        m_httpDelegate.post(url: "http://localhost:8080/", message: text, state: m_currentState) { (response) in
+            
+            print(response)
+            
+            let sortedKeys = Array(response.keys).sorted(by: >)
+            for key in sortedKeys {
+                
+                let newMessage = JSQMessage(senderId: "bot", senderDisplayName: "bot", date: Date(timeIntervalSinceNow: 0), text: response[key] as! String)!
+                self.m_queuedMessages.append(newMessage)
+                
+            }
+            
+            Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.dequeueMessages), userInfo: nil, repeats: true)
+            
+        }
     }
 
     // Collection View
