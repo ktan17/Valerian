@@ -19,6 +19,7 @@
 		4455895720269C9900902519 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4455895520269C9800902519 /* Poppins-Bold.ttf */; };
 		4455895920269E0600902519 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455895820269E0600902519 /* WelcomeViewController.swift */; };
 		4455895B2026A43900902519 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4455895A2026A43900902519 /* Comfortaa-Bold.ttf */; };
+		4455895D2026B07000902519 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455895C2026B07000902519 /* NameViewController.swift */; };
 		A8A40D1D839A398923920E56 /* Pods_Felix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD483ADCB87E797D60A3C945 /* Pods_Felix.framework */; };
 		AA2A5A216EB9E24C56C93602 /* Pods_FelixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E228D3126476EFF448AF05C2 /* Pods_FelixUITests.framework */; };
 		DCC815EFCBFA446802B2BCF3 /* Pods_FelixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57DF5AB99629F3179431AE12 /* Pods_FelixTests.framework */; };
@@ -62,6 +63,7 @@
 		4455895520269C9800902519 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		4455895820269E0600902519 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4455895A2026A43900902519 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		4455895C2026B07000902519 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		57DF5AB99629F3179431AE12 /* Pods_FelixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FelixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FCF2EF437A41A5894FCD930 /* Pods-FelixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FelixUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FelixUITests/Pods-FelixUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A11CE9F420B26C48FEAEF0E6 /* Pods-FelixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FelixTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FelixTests/Pods-FelixTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				4455892420263E0000902519 /* AppDelegate.swift */,
 				4455895820269E0600902519 /* WelcomeViewController.swift */,
+				4455895C2026B07000902519 /* NameViewController.swift */,
 				4455892620263E0000902519 /* ChatBotViewController.swift */,
 				445589522026650900902519 /* FelixHTTPDelegate.swift */,
 				4455892820263E0100902519 /* Main.storyboard */,
@@ -482,6 +485,7 @@
 				4455895920269E0600902519 /* WelcomeViewController.swift in Sources */,
 				4455892520263E0000902519 /* AppDelegate.swift in Sources */,
 				445589532026650900902519 /* FelixHTTPDelegate.swift in Sources */,
+				4455895D2026B07000902519 /* NameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

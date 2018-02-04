@@ -30,6 +30,10 @@ class WelcomeViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
+        guard self.viewIfLoaded?.window != nil else {
+            return
+        }
+        
         if m_welcomeIndex == 0 {
             UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseInOut, animations: {
                 self.hereToHelpLabel.alpha = 1

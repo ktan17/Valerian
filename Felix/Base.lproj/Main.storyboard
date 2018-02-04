@@ -36,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tap to continue..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPj-1z-8VX">
-                                <rect key="frame" x="122.5" y="612" width="129" height="20"/>
+                                <rect key="frame" x="117.5" y="608" width="139" height="24"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm here to help :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubu-1d-auj">
-                                <rect key="frame" x="59" y="476" width="257" height="38.5"/>
+                                <rect key="frame" x="43" y="476" width="289" height="37"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="-338.39999999999998" y="43.628185907046479"/>
         </scene>
-        <!--View Controller-->
+        <!--Name View Controller-->
         <scene sceneID="KeF-kq-h9V">
             <objects>
-                <viewController id="Plo-E4-OOs" sceneMemberID="viewController">
+                <viewController id="Plo-E4-OOs" customClass="NameViewController" customModule="Felix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g7z-eh-3yr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,7 +97,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your name?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzt-It-7GM">
-                                <rect key="frame" x="36.5" y="313" width="303.5" height="41"/>
+                                <rect key="frame" x="12.5" y="314.5" width="350" height="39.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="cqO-Wf-rAq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -109,18 +112,26 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BXt-Ad-ejq">
-                                <rect key="frame" x="36.5" y="404" width="303.5" height="35"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="30"/>
+                                <rect key="frame" x="12.5" y="404" width="350" height="40"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="35"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOi-A8-nRA">
-                                <rect key="frame" x="35.5" y="439" width="303.5" height="2"/>
+                                <rect key="frame" x="12.5" y="444" width="350" height="2"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="UYU-dJ-Gau"/>
                                 </constraints>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="he8-O5-CRZ">
+                                <rect key="frame" x="145" y="531" width="85" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="94X-gw-pP7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="35"/>
+                                <state key="normal" title="next"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -132,8 +143,10 @@
                             <constraint firstItem="kzt-It-7GM" firstAttribute="centerY" secondItem="g7z-eh-3yr" secondAttribute="centerY" id="ATQ-R9-Qse"/>
                             <constraint firstItem="LOi-A8-nRA" firstAttribute="width" secondItem="BXt-Ad-ejq" secondAttribute="width" id="DD8-5Q-ztJ"/>
                             <constraint firstItem="BXt-Ad-ejq" firstAttribute="centerX" secondItem="g7z-eh-3yr" secondAttribute="centerX" id="Jb2-fj-K53"/>
+                            <constraint firstItem="he8-O5-CRZ" firstAttribute="centerX" secondItem="g7z-eh-3yr" secondAttribute="centerX" id="Wlp-3h-ynY"/>
                             <constraint firstItem="BXt-Ad-ejq" firstAttribute="width" secondItem="kzt-It-7GM" secondAttribute="width" id="ZQG-ey-5e6"/>
                             <constraint firstItem="Vei-Uj-rLR" firstAttribute="centerX" secondItem="BXt-Ad-ejq" secondAttribute="centerX" id="bvg-Ez-qmB"/>
+                            <constraint firstItem="he8-O5-CRZ" firstAttribute="top" secondItem="LOi-A8-nRA" secondAttribute="bottom" constant="85" id="cNb-W8-caS"/>
                             <constraint firstItem="Vei-Uj-rLR" firstAttribute="bottom" secondItem="CZw-fn-7Hg" secondAttribute="bottom" id="j7N-IS-9cN"/>
                             <constraint firstItem="LOi-A8-nRA" firstAttribute="top" secondItem="BXt-Ad-ejq" secondAttribute="bottom" id="jFL-d4-qKw"/>
                             <constraint firstItem="qGF-62-HNu" firstAttribute="top" secondItem="CZw-fn-7Hg" secondAttribute="top" constant="20" id="kTx-Gz-50b"/>
@@ -142,6 +155,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CZw-fn-7Hg"/>
                     </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="BXt-Ad-ejq" id="C0t-iG-FII"/>
+                        <outlet property="nextButton" destination="he8-O5-CRZ" id="Meh-td-s9e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IF8-tZ-lDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
