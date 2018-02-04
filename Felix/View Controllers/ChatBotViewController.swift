@@ -63,6 +63,10 @@ class ChatBotViewController: JSQMessagesViewController {
         m_httpDelegate = HTTPDelegate()
     }
     
+    @IBAction func unwindToBot(segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

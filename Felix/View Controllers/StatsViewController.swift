@@ -23,19 +23,24 @@ class StatsViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     
     private let sectionInsets = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
-    private var m_moods: [CGFloat] = [0.9, 0.1, 0.4, 0.3, 0.6, 0.3, 0.2, 0.8, 0.45, 0.234, 0.3, 0.9, 0.0, 0.9, 0.8, 1, 0.1, 0.5, 0.34, 0.67, 0.3, 0.6, 0.6, 0.55, 0.3, 0.9, 0.2, 0.3]
+    private var m_moods: [CGFloat] = [
+        0.9, 0.1, 0.4, 0.3, 0.6, 0.3, 0.2,
+        0.8, 0.45, 0.234, 0.3, 0.9, 0.0, 0.9,
+        0.8, 1, 0.1, 0.5, 0.34, 0.67, 0.3,
+        0.6, 0.6, 0.55, 0.3, 0.9, 0.2, 0.3
+    ]
     
     // Methods - Functions (Member functions)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let padding: CGFloat = 20
+        let padding: CGFloat = 15
         let graphSide: CGFloat = 300
         let labelHeight: CGFloat = 50
         let letterHeight: CGFloat = 20
         let mapHeight: CGFloat = 200
-        let summaryHeight: CGFloat = 300
+        let summaryHeight: CGFloat = 100
         
         let scrollViewHeight = 7.25*padding + graphSide + 3*labelHeight + letterHeight + mapHeight + summaryHeight
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: scrollViewHeight)
@@ -52,7 +57,7 @@ class StatsViewController: UIViewController {
         titleLabel0.frame = CGRect(x: screenWidth/2 - titleLabel0.frame.width/2, y: yOrigin, width: titleLabel0.frame.width, height: labelHeight)
         
         scrollView.addSubview(titleLabel0)
-        yOrigin += labelHeight + padding
+        yOrigin += labelHeight
         
         // Pie Chart
         
@@ -60,7 +65,7 @@ class StatsViewController: UIViewController {
         let pieChart = FXPieChart(frame: CGRect(x: screenWidth/2 - pieWidth/2, y: yOrigin, width: pieWidth, height: graphSide), parent: self)
         
         scrollView.addSubview(pieChart)
-        yOrigin += graphSide + padding
+        yOrigin += graphSide
         
         // Title Label
         
@@ -115,13 +120,13 @@ class StatsViewController: UIViewController {
         heatCollection.dataSource = self
         
         scrollView.addSubview(heatCollection)
-        yOrigin += heatCollection.frame.height + padding
+        yOrigin += heatCollection.frame.height + padding*2
         
         // Title Label
         
         let titleLabel2 = UILabel()
         titleLabel2.font = UIFont(name: "Poppins-Bold", size: 18)
-        titleLabel2.text = "Summary"
+        titleLabel2.text = "Comments"
         titleLabel2.sizeToFit()
         titleLabel2.frame = CGRect(x: screenWidth/2 - titleLabel2.frame.width/2, y: yOrigin, width: titleLabel2.frame.width, height: labelHeight)
         
@@ -133,7 +138,7 @@ class StatsViewController: UIViewController {
         let summaryTextView = UITextView(frame: CGRect(x: screenWidth/2 - heatCollection.frame.width/2, y: yOrigin, width: heatCollection.frame.width, height: summaryHeight))
         summaryTextView.backgroundColor = .clear
         summaryTextView.font = UIFont(name: "Poppins-Regular", size: 16)
-        summaryTextView.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        summaryTextView.text = " \"Keep your chin up! Tomorrow will be a better day :) I'll always be here if you want to talk!\""
         
         scrollView.addSubview(summaryTextView)
         
@@ -180,10 +185,14 @@ extension StatsViewController: CPTPieChartDataSource {
     
     func sliceFill(for pieChart: CPTPieChart, record idx: UInt) -> CPTFill? {
         switch idx {
-        case 0:   return CPTFill(color: CPTColor(componentRed:0.92, green:0.28, blue:0.25, alpha:1.00))
-        case 1:   return CPTFill(color: CPTColor(componentRed:0.06, green:0.80, blue:0.48, alpha:1.00))
-        case 2:   return CPTFill(color: CPTColor(componentRed:0.22, green:0.33, blue:0.49, alpha:1.00))
-        case 3:   return CPTFill(color: CPTColor(componentRed:1, green:0, blue:0, alpha:1.00))
+            // happy
+        case 0:   return CPTFill(color: CPTColor(componentRed:0.22, green:0.90, blue:0.22, alpha:1.00))
+            // sad
+        case 1:   return CPTFill(color: CPTColor(componentRed:0.22, green:0.22, blue:0.90, alpha:1.00))
+            // anxious
+        case 2:   return CPTFill(color: CPTColor(componentRed:0.92, green:0.28, blue:0.25, alpha:1.00))
+            // angry
+        case 3:   return CPTFill(color: CPTColor(componentRed:0.92, green:0.92, blue:0.49, alpha:1.00))
             
         default:  return nil
         }
