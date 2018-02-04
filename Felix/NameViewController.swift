@@ -8,6 +8,8 @@
 
 import UIKit
 
+var globalName: String = ""
+
 class NameViewController: UIViewController {
     
     @IBOutlet var nameTextField: UITextField!
@@ -40,6 +42,11 @@ class NameViewController: UIViewController {
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        globalName = nameTextField.text!
+        super.prepare(for: segue, sender: sender)
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
