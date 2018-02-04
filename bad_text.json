@@ -1,0 +1,98 @@
+{
+  "document_tone": {
+    "tones": [
+      {
+        "score": 0.52646,
+        "tone_id": "sadness",
+        "tone_name": "Sadness"
+      },
+      {
+        "score": 0.541232,
+        "tone_id": "fear",
+        "tone_name": "Fear"
+      },
+      {
+        "score": 0.692584,
+        "tone_id": "analytical",
+        "tone_name": "Analytical"
+      },
+      {
+        "score": 0.808202,
+        "tone_id": "tentative",
+        "tone_name": "Tentative"
+      }
+    ]
+  },
+  "sentences_tone": [
+    {
+      "sentence_id": 0,
+      "text": "I said something wrong at a social event.",
+      "tones": [
+        {
+          "score": 0.88939,
+          "tone_id": "tentative",
+          "tone_name": "Tentative"
+        }
+      ]
+    },
+    {
+      "sentence_id": 1,
+      "text": "I felt embarrassed and later I was anxious thinking about it.",
+      "tones": [
+        {
+          "score": 0.68113,
+          "tone_id": "fear",
+          "tone_name": "Fear"
+        },
+        {
+          "score": 0.653099,
+          "tone_id": "analytical",
+          "tone_name": "Analytical"
+        },
+        {
+          "score": 0.786991,
+          "tone_id": "tentative",
+          "tone_name": "Tentative"
+        }
+      ]
+    },
+    {
+      "sentence_id": 2,
+      "text": "I feel like a failure.",
+      "tones": [
+        {
+          "score": 0.694531,
+          "tone_id": "sadness",
+          "tone_name": "Sadness"
+        },
+        {
+          "score": 0.965509,
+          "tone_id": "analytical",
+          "tone_name": "Analytical"
+        }
+      ]
+    },
+    {
+      "sentence_id": 3,
+      "text": "I worry that people will judge me.",
+      "tones": [
+        {
+          "score": 0.785917,
+          "tone_id": "fear",
+          "tone_name": "Fear"
+        }
+      ]
+    },
+    {
+      "sentence_id": 4,
+      "text": "I hate that I feel this way inside, and that I\u2019m always making dumb mistakes",
+      "tones": [
+        {
+          "score": 0.632912,
+          "tone_id": "anger",
+          "tone_name": "Anger"
+        }
+      ]
+    }
+  ]
+}
