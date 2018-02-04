@@ -43,6 +43,7 @@ class ChatBotViewController: JSQMessagesViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.collectionView.collectionViewLayout.outgoingAvatarViewSize = .zero
+        self.inputToolbar.contentView.leftBarButtonItem = nil
         
         m_httpDelegate.post(url: "https://hackuci-felix.herokuapp.com/", message: "christine is kool") { (response) in
             print(response)
