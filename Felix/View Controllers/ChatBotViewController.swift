@@ -9,11 +9,23 @@
 import UIKit
 import JSQMessagesViewController
 
+enum FelixEmotion: Int {
+    case CONCERNED = 0
+    case FRUSTRATED
+    case MAD
+    case CRY
+    case SAD
+    case JOY
+    case HAPPY
+    case PROUD
+}
+
 class ChatBotViewController: JSQMessagesViewController {
 
     // Properties
     
     private var m_messages = [JSQMessage]()
+    private var m_queuedMessages = [JSQMessage]()
     
     private lazy var m_outgoingBubble = setupOutgoingBubble()
     private lazy var m_incomingBubble = setupIncomingBubble()
@@ -24,7 +36,7 @@ class ChatBotViewController: JSQMessagesViewController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.senderDisplayName = "Helen"
+        self.senderDisplayName = globalName
         self.senderId = "blah"
         
         m_httpDelegate = HTTPDelegate()
@@ -43,10 +55,54 @@ class ChatBotViewController: JSQMessagesViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.collectionView.collectionViewLayout.outgoingAvatarViewSize = .zero
+        self.inputToolbar.contentView.leftBarButtonItem = nil
         
         m_httpDelegate.post(url: "https://hackuci-felix.herokuapp.com/", message: "christine is kool") { (response) in
+            
             print(response)
+            
+            let sortedKeys = Array(response.keys).sorted(by: >)
+            for key in sortedKeys {
+                
+                let newMessage = JSQMessage(senderId: "bot", senderDisplayName: "bot", date: Date(timeIntervalSinceNow: 0), text: response[key] as! String)!
+                self.m_queuedMessages.append(newMessage)
+                
+            }
+            
+            Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.dequeueMessages), userInfo: nil, repeats: true)
+            
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.view.backgroundColor = .clear
+        collectionView.backgroundColor = .clear
+        
+        let backgroundImageView = UIImageView(frame: self.view.bounds)
+        //backgroundImageView.frame.size = self.collectionView.frame.size
+        //backgroundImageView.center = self.collectionView.center
+        backgroundImageView.contentMode = .scaleAspectFill
+        backgroundImageView.image = UIImage(named: "WelcomeBG")
+        
+        view.addSubview(backgroundImageView)
+        view.sendSubview(toBack: backgroundImageView)
+    }
+    
+    @objc func dequeueMessages(_ sender: Timer!) {
+        
+        if !m_queuedMessages.isEmpty {
+            m_messages.append(m_queuedMessages[m_queuedMessages.count-1])
+            self.collectionView.reloadData()
+            self.finishReceivingMessage()
+            m_queuedMessages.removeLast()
+        }
+        
+        if m_queuedMessages.isEmpty {
+            sender.invalidate()
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,7 +124,7 @@ class ChatBotViewController: JSQMessagesViewController {
     
     private func setupIncomingBubble() -> JSQMessagesBubbleImage {
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
-        return bubbleImageFactory!.incomingMessagesBubbleImage(with: UIColor.lightGray)
+        return bubbleImageFactory!.incomingMessagesBubbleImage(with: UIColor(white: 0.9, alpha: 1))
     }
     
     // JSQMessages
@@ -105,7 +161,29 @@ class ChatBotViewController: JSQMessagesViewController {
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
+        
+        let message = m_messages[indexPath.row]
+        if message.senderId == senderId {
+            return nil
+        }
+        
         return nil
+        
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = super.collectionView(collectionView, cellForItemAt: indexPath)
+            as! JSQMessagesCollectionViewCell
+        
+        let message = m_messages[indexPath.row]
+        
+        if message.senderId != self.senderId {
+            cell.textView!.textColor = UIColor.black
+        }
+        
+        return cell
+        
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, attributedTextForCellTopLabelAt indexPath: IndexPath!) -> NSAttributedString! {
