@@ -9,6 +9,17 @@
 import UIKit
 import JSQMessagesViewController
 
+enum FelixEmotion: Int {
+    case CONCERNED = 0
+    case FRUSTRATED
+    case MAD
+    case CRY
+    case SAD
+    case JOY
+    case HAPPY
+    case PROUD
+}
+
 class ChatBotViewController: JSQMessagesViewController {
 
     // Properties
@@ -61,6 +72,22 @@ class ChatBotViewController: JSQMessagesViewController {
             Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.dequeueMessages), userInfo: nil, repeats: true)
             
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.view.backgroundColor = .clear
+        collectionView.backgroundColor = .clear
+        
+        let backgroundImageView = UIImageView(frame: self.view.bounds)
+        //backgroundImageView.frame.size = self.collectionView.frame.size
+        //backgroundImageView.center = self.collectionView.center
+        backgroundImageView.contentMode = .scaleAspectFill
+        backgroundImageView.image = UIImage(named: "WelcomeBG")
+        
+        view.addSubview(backgroundImageView)
+        view.sendSubview(toBack: backgroundImageView)
     }
     
     @objc func dequeueMessages(_ sender: Timer!) {
@@ -134,7 +161,14 @@ class ChatBotViewController: JSQMessagesViewController {
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
+        
+        let message = m_message[indexPath.row]
+        if message.senderId = senderId {
+            return nil
+        }
+        
         return nil
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
