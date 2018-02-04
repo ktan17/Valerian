@@ -246,7 +246,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWs-Tj-rHX">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Felix" id="BGV-BU-FnB">
+                                    <navigationItem title="Val" id="BGV-BU-FnB">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="MQA-sf-WaN">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1PP-fA-4tZ">
                                                 <rect key="frame" x="335" y="10" width="24" height="24"/>
@@ -367,6 +367,6 @@
         <image name="statsicon" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iGg-NH-MxP"/>
+        <segue reference="g0q-1q-hqY"/>
     </inferredMetricsTieBreakers>
 </document>
