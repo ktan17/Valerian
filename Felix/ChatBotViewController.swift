@@ -162,8 +162,8 @@ class ChatBotViewController: JSQMessagesViewController {
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
         
-        let message = m_message[indexPath.row]
-        if message.senderId = senderId {
+        let message = m_messages[indexPath.row]
+        if message.senderId == senderId {
             return nil
         }
         
