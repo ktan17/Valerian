@@ -23,9 +23,8 @@ class HTTPDelegate: NSObject, FelixHTTPDelegate {
     }
     
     func post(url: String, message: String, completion: @escaping ([String : Any]) -> Void) {
+        
         Alamofire.request(url, method: .post, parameters: ["user_message" : message], encoding: JSONEncoding(), headers: nil).responseJSON { (response) in
-            //print(response.result.value)
-            
             guard response.result.isSuccess else {
                 print(response.error)
                 return
@@ -37,5 +36,6 @@ class HTTPDelegate: NSObject, FelixHTTPDelegate {
             
             completion(data)
         }
+        
     }
 }
