@@ -23,6 +23,7 @@
 		5F05715B2026FD9400FAE2F4 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F05715A2026FD9400FAE2F4 /* StatsViewController.swift */; };
 		5F05715F20270CF200FAE2F4 /* FXPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F05715E20270CF200FAE2F4 /* FXPieChart.swift */; };
 		5F05716120271A5500FAE2F4 /* HeatMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F05716020271A5400FAE2F4 /* HeatMapCell.swift */; };
+		5F0571652027292400FAE2F4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0571642027292400FAE2F4 /* SettingsViewController.swift */; };
 		A8A40D1D839A398923920E56 /* Pods_Felix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD483ADCB87E797D60A3C945 /* Pods_Felix.framework */; };
 		AA2A5A216EB9E24C56C93602 /* Pods_FelixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E228D3126476EFF448AF05C2 /* Pods_FelixUITests.framework */; };
 		DCC815EFCBFA446802B2BCF3 /* Pods_FelixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57DF5AB99629F3179431AE12 /* Pods_FelixTests.framework */; };
@@ -71,6 +72,7 @@
 		5F05715A2026FD9400FAE2F4 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		5F05715E20270CF200FAE2F4 /* FXPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXPieChart.swift; sourceTree = "<group>"; };
 		5F05716020271A5400FAE2F4 /* HeatMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatMapCell.swift; sourceTree = "<group>"; };
+		5F0571642027292400FAE2F4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7FCF2EF437A41A5894FCD930 /* Pods-FelixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FelixUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FelixUITests/Pods-FelixUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A11CE9F420B26C48FEAEF0E6 /* Pods-FelixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FelixTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FelixTests/Pods-FelixTests.release.xcconfig"; sourceTree = "<group>"; };
 		BD483ADCB87E797D60A3C945 /* Pods_Felix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Felix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +183,7 @@
 				4455895C2026B07000902519 /* NameViewController.swift */,
 				4455892620263E0000902519 /* ChatBotViewController.swift */,
 				5F05715A2026FD9400FAE2F4 /* StatsViewController.swift */,
+				5F0571642027292400FAE2F4 /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				445589532026650900902519 /* FelixHTTPDelegate.swift in Sources */,
 				5F05715B2026FD9400FAE2F4 /* StatsViewController.swift in Sources */,
 				4455895D2026B07000902519 /* NameViewController.swift in Sources */,
+				5F0571652027292400FAE2F4 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
