@@ -1,4 +1,5 @@
 import sys
+import json
 
 introduction = "Hi. My name is Felix! I am here to help you exercise healthy ways of thinking, through a process called cognitive behavioural therapy (CBT). This method is proven to be one of the best options to improve daily mood and overall health. I am also attentative of the meaning of your words in order to help you identify thought patterns and keep track of your mood day-to-day. You can think of me as a tool to help you tackle the difficult task of identifying the many negative automatic thoughts we all experience so often. I am always available and everything in our conversation will be kept private and anonymous, so feel free to message me anytime and talk to me about anything that's on your mind."
 
@@ -9,10 +10,8 @@ cbt_prompts = [	"(Free Prompt / Warm-up) What's on your mind?",
 				"(Challenge your automatic thought) What facts do you have that support or challenge your initial thought?",
 				"(Exercise alternative thinking) How could you re-write your thoughts into a different perspective?"]
 
-
-print(introduction)
-print()
-print(what_is_CBT)
+jsonData = json.dumps({"introduction": introduction, "what_is_CBT": what_is_CBT}, separators=(',',':'))
+print(jsonData)
 sys.stdout.flush()
 
 command_keywords = ["help"]
