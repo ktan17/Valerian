@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QDS-IL-1rN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QDS-IL-1rN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -178,6 +178,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="asX-GR-Fa4" kind="relationship" relationship="viewControllers" id="I6T-VY-YmV"/>
+                        <segue destination="J5V-dZ-9Rx" kind="relationship" relationship="viewControllers" id="F9B-D0-Hqp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RfC-Oq-3F9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -241,6 +242,46 @@
             </objects>
             <point key="canvasLocation" x="876" y="813.64317841079469"/>
         </scene>
+        <!--Stats-->
+        <scene sceneID="Coo-rD-1KC">
+            <objects>
+                <viewController id="J5V-dZ-9Rx" customClass="StatsViewController" customModule="Felix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n9C-Vq-4JK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="APT-4A-VyL">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Statistics" id="8UE-Zt-aqG"/>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BC5-jw-2xK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BC5-jw-2xK" firstAttribute="trailing" secondItem="APT-4A-VyL" secondAttribute="trailing" id="0Ns-IN-kLM"/>
+                            <constraint firstItem="APT-4A-VyL" firstAttribute="leading" secondItem="GjS-4c-iLg" secondAttribute="leading" id="DeN-5S-Kfz"/>
+                            <constraint firstItem="APT-4A-VyL" firstAttribute="trailing" secondItem="GjS-4c-iLg" secondAttribute="trailing" id="Fa2-A3-fbb"/>
+                            <constraint firstItem="BC5-jw-2xK" firstAttribute="leading" secondItem="APT-4A-VyL" secondAttribute="leading" id="ToX-oZ-cbP"/>
+                            <constraint firstItem="APT-4A-VyL" firstAttribute="top" secondItem="GjS-4c-iLg" secondAttribute="top" id="eMi-jj-JIn"/>
+                            <constraint firstItem="BC5-jw-2xK" firstAttribute="bottom" secondItem="GjS-4c-iLg" secondAttribute="bottom" id="kXO-yw-7xZ"/>
+                            <constraint firstItem="BC5-jw-2xK" firstAttribute="top" secondItem="APT-4A-VyL" secondAttribute="bottom" id="r1b-pd-Iwk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GjS-4c-iLg"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stats" image="statsicon" id="q9v-lE-f3j"/>
+                    <connections>
+                        <outlet property="scrollView" destination="BC5-jw-2xK" id="olS-PL-3ip"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aws-HO-1Uc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1708" y="814"/>
+        </scene>
         <!--Chat Bot View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -264,5 +305,6 @@
         <image name="WelcomeBG" width="1280" height="1280"/>
         <image name="gearicon" width="24" height="24"/>
         <image name="messageicon" width="24" height="24"/>
+        <image name="statsicon" width="24" height="24"/>
     </resources>
 </document>
