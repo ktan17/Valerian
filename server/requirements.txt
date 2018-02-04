@@ -1,0 +1,7 @@
+google-cloud-language
+watson-developer-cloud==1.0.1
+boto3
+awscli
+requests==1.1.0
+python-firebase
+firebase-admin
