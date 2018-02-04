@@ -34,7 +34,9 @@ class ChatBotViewController: JSQMessagesViewController {
     // Properties
     
     private var m_messages = [JSQMessage]()
+    private var m_emotions = [FelixEmotion?]()
     private var m_queuedMessages = [JSQMessage]()
+    private var m_queuedEmotions = [FelixEmotion]()
     
     private var m_currentState: State = .START
     
@@ -65,6 +67,7 @@ class ChatBotViewController: JSQMessagesViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize(width: 40, height: 40)
         self.collectionView.collectionViewLayout.outgoingAvatarViewSize = .zero
         self.inputToolbar.contentView.leftBarButtonItem = nil
     }
@@ -76,8 +79,6 @@ class ChatBotViewController: JSQMessagesViewController {
         collectionView.backgroundColor = .clear
         
         let backgroundImageView = UIImageView(frame: self.view.bounds)
-        //backgroundImageView.frame.size = self.collectionView.frame.size
-        //backgroundImageView.center = self.collectionView.center
         backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.image = UIImage(named: "WelcomeBG")
         
@@ -89,9 +90,11 @@ class ChatBotViewController: JSQMessagesViewController {
         
         if !m_queuedMessages.isEmpty {
             m_messages.append(m_queuedMessages[m_queuedMessages.count-1])
+            m_emotions.append(m_queuedEmotions[m_queuedEmotions.count-1])
             self.collectionView.reloadData()
             self.finishReceivingMessage()
             m_queuedMessages.removeLast()
+            m_queuedEmotions.removeLast()
         }
         
         if m_queuedMessages.isEmpty {
@@ -127,12 +130,13 @@ class ChatBotViewController: JSQMessagesViewController {
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         let newMessage = JSQMessage(senderId: senderId, senderDisplayName: senderDisplayName, date: date, text: text)!
         m_messages.append(newMessage)
+        m_emotions.append(nil)
         
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
         self.collectionView.reloadData()
         finishSendingMessage()
         
-        m_httpDelegate.post(url: "http://localhost:8080/", message: text, state: m_currentState) { (response) in
+        m_httpDelegate.post(url: "https://felixserver.herokuapp.com/", message: text, state: m_currentState) { (response) in
             
             print(response)
             
@@ -140,7 +144,9 @@ class ChatBotViewController: JSQMessagesViewController {
             
             for message in messages {
                 let newMessage = JSQMessage(senderId: "bot", senderDisplayName: "bot", date: Date(timeIntervalSinceNow: 0), text: message["message"] as! String)!
+                let mood = message["mood"] as! String
                 self.m_queuedMessages.append(newMessage)
+                self.m_queuedEmotions.append(FelixEmotion(rawValue: Int(mood)!)!)
             }
             
             /*let sortedKeys = Array(response.keys).sorted(by: >)
@@ -178,6 +184,31 @@ class ChatBotViewController: JSQMessagesViewController {
         
     }
     
+    private func setupIncomingAvatar(index: IndexPath) -> JSQMessagesAvatarImage {
+        
+        let imageName: String
+        switch m_emotions[index.row]! {
+        case .HAPPY:
+            imageName = "felix_happy"
+        case .CONCERNED:
+            imageName = "felix_concerned"
+        case .SAD:
+            imageName = "felix_sad"
+        case .FRUSTRATED:
+            imageName = "felix_frustrated"
+        case .JOY:
+            imageName = "felix_joy"
+        case .MAD:
+            imageName = "felix_mad"
+        case .PROUD:
+            imageName = "felix_proud"
+        case .CRY:
+            imageName = "felix_cry"
+        }
+        
+        return JSQMessagesAvatarImageFactory.avatarImage(with: UIImage(named: imageName), diameter: 1000)
+    }
+
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
         
         let message = m_messages[indexPath.row]
@@ -185,7 +216,7 @@ class ChatBotViewController: JSQMessagesViewController {
             return nil
         }
         
-        return nil
+        return setupIncomingAvatar(index: indexPath)
         
     }
     
